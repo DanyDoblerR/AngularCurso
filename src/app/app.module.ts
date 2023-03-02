@@ -1,11 +1,8 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+// Componentes de Angular Material
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
@@ -15,25 +12,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { HomeComponent } from './home/home.component';
-import { RouterModule, Routes } from '@angular/router';
+// Componentes de la aplicación
+import { AppComponent } from './app.component';
 import { ReestablecerComponent } from './reestablecer/reestablecer.component';
 import { MenuComponent } from './menu/menu.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { InicioSesionModule } from './InicioSesion/inicio-sesion.module';
 
-const appRoutes: Routes =[
-   {path: '', component:HomeComponent},
-   {path: 'reestablecer', component:ReestablecerComponent},
-   {path: 'menu', component:MenuComponent},
-   {path: 'usuarios', component:UsuariosComponent},
-   {path: 'perfil', component:PerfilComponent}
-];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
+    AppComponent,    
     ReestablecerComponent,
     MenuComponent,
     UsuariosComponent,
@@ -51,8 +41,8 @@ const appRoutes: Routes =[
     MatButtonToggleModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes)
+    BrowserAnimationsModule, 
+    InicioSesionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
