@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// Colocar los componentes en cada parte y si marca error eliminar los que no se van a ocupar
+
 const rutas: Routes = [
   { path: '', redirectTo: '/inicio-sesion', pathMatch: 'full' },
   {path: 'inicio-sesion', component: ''},
@@ -16,7 +18,7 @@ const rutas: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(rutas)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
