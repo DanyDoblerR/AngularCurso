@@ -33,7 +33,7 @@ export class FormularioInicioSesionComponent {
       .subscribe( (respuesta: any) => {        
         if (respuesta.message === 'Inicio sesion correcto') {          
           this.router.navigate(['/dashboard']);
-          localStorage.setItem('idUsuario', respuesta.id.toString());
+          localStorage.setItem('idUsuario', respuesta.id);
         } else {
           alert('Usuario o contraseña incorrecta');
         }
