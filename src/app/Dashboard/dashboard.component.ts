@@ -1,4 +1,3 @@
-import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
             background-color: aliceblue;
         }
     `]

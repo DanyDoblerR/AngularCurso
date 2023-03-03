@@ -20,10 +20,9 @@ import { DashboardModule } from './Dashboard/dashboard.module';
     MaterialModule,
     FormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     InicioSesionModule,
-    DashboardModule
-
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
