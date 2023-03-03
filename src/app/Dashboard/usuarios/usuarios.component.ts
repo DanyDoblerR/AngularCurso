@@ -10,7 +10,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class UsuariosComponent {
   
   dataSource !: Usuario[];
-  displayedColumns = ['nombres','apellidoPaterno','apellidoMaterno', 'correo', 'telefono', 'sexo', 'contraseña'];
+  displayedColumns = ['nombres','apellidoPaterno','apellidoMaterno', 'correo', 'telefono', 'sexo', 'contraseña', 'botones'];
 
   constructor(private usuariosService : UsuarioService){
     this.obtenerUsuarios(localStorage.getItem('idUsuario') as string)
