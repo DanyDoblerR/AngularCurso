@@ -31,9 +31,8 @@ export class FormularioInicioSesionComponent {
     }else{
       this.usuarioService.validarInicioSesion(infoUsuario.correo, infoUsuario.contrasena)
       .subscribe( (respuesta: any) => {        
-        if (respuesta.message === 'Inicio sesion correcto') {
-          // TODO Pedir la ruta del inicio de la aplicacion
-          // this.router.navigate(['/inicio']);
+        if (respuesta.message === 'Inicio sesion correcto') {          
+          this.router.navigate(['/dashboard']);
           localStorage.setItem('idUsuario', respuesta.id.toString());
         } else {
           alert('Usuario o contraseña incorrecta');
