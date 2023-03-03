@@ -1,11 +1,59 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { Usuario } from '../../models/usuario.model';
+import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-formulario-inicio-sesion',
   templateUrl: './formulario-inicio-sesion.component.html',
-  styles: [
-  ]
+  styleUrls: ['.././inicio-sesion.css'],
 })
 export class FormularioInicioSesionComponent {
+
+  datosUsuario !: FormGroup;
+  mostrarContrasena: boolean = false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private usuarioService: UsuarioService
+  ) {
+    this.datosUsuario = this.formBuilder.group({
+      correo: new FormControl('', [Validators.required, Validators.email]),
+      contrasena: new FormControl('', [Validators.required])
+    });
+  }
+
+  enviarDatos(infoUsuario: Usuario) {
+    if (infoUsuario.correo === '' || infoUsuario.contrasena === '') {
+      alert('Favor de llenar todos los campos');      
+    }else{
+      this.usuarioService.validarInicioSesion(infoUsuario.correo, infoUsuario.contrasena)
+      .subscribe( (respuesta: any) => {        
+        if (respuesta.message === 'Inicio sesion correcto') {
+          // TODO Pedir la ruta del inicio de la aplicacion
+          // this.router.navigate(['/inicio']);
+          localStorage.setItem('idUsuario', respuesta.id.toString());
+        } else {
+          alert('Usuario o contraseña incorrecta');
+        }
+      });
+    }
+  }
+  mensajeErrorCampoRequerido(controlName: string, errorName: string) {
+    if (this.datosUsuario.controls[controlName].hasError('required')) {
+      return `El campo ${ controlName } es requerido`;
+    }    
+    return '';
+  }
+
+  mensajeErrorCorreoFormato(controlName: string, errorName: string) {
+    if (this.datosUsuario.controls[controlName].hasError('email')) {
+      return 'El correo no es válido';
+    }
+    return '';
+  } 
+  
 
 }

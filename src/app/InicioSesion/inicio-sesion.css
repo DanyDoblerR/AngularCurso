@@ -1,0 +1,29 @@
+.card{
+    /* margin: 10% 30%;     */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: aliceblue;
+}
+.mat-mdc-card{
+    width: 500px;
+    height: 400px;
+    transition: all 0.5s ease;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.22);
+}
+
+.mat-mdc-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+mat-form-field.mat-mdc-form-field.ng-tns-c93-0.mat-mdc-form-field-type-mat-input.mat-form-field-appearance-fill.mat-form-field-hide-placeholder.mat-primary.ng-untouched.ng-pristine.ng-invalid.ng-star-inserted{
+    margin: 20px 0;
+}
+
+form, .ng-pristine, .ng-invalid, .ng-touched {
+    display: flex !important;
+    flex-direction: column !important;
+}
