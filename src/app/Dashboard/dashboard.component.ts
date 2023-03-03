@@ -1,9 +1,8 @@
-import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-name',
-    template : ` 
+    template : `
     <div class="container">
         <router-outlet></router-outlet>
     </div>
@@ -14,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
             height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
             background-color: aliceblue;
         }
     `]

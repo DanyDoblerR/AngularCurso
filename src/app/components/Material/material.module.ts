@@ -80,7 +80,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         MatIconModule,
         MatInputModule,
         MatListModule,
-        MatMenuModule,        
+        MatMenuModule,
         MatPaginatorModule,
         MatProgressBarModule,
         MatProgressSpinnerModule,
