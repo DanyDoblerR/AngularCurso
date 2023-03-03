@@ -7,20 +7,13 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './components/Material/material.module';
 // Componentes de la aplicación
 import { AppComponent } from './app.component';
-import { ReestablecerComponent } from './reestablecer/reestablecer.component';
-import { MenuComponent } from './menu/menu.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { InicioSesionModule } from './InicioSesion/inicio-sesion.module';
+import { DashboardModule } from './Dashboard/dashboard.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,    
-    ReestablecerComponent,
-    MenuComponent,
-    UsuariosComponent,
-    PerfilComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +22,7 @@ import { InicioSesionModule } from './InicioSesion/inicio-sesion.module';
     AppRoutingModule,
     BrowserAnimationsModule, 
     InicioSesionModule,
+    DashboardModule
 
   ],
   providers: [],
