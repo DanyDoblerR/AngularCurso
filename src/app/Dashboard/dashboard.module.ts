@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 
@@ -15,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,      
     DashboardComponent,
     PerfilComponent,
+    UsuariosComponent,
     DialogContentExampleDialog
   ],
   imports: [

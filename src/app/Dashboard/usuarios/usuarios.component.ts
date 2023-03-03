@@ -1,11 +1,29 @@
 import { Component } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
-  styles: [
-  ]
+  styleUrls: ['usuarios.component.css']
 })
 export class UsuariosComponent {
+  
+  dataSource !: Usuario[];
+  displayedColumns = ['nombres','apellidoPaterno','apellidoMaterno', 'correo', 'telefono', 'sexo', 'contraseña'];
+
+  constructor(private usuariosService : UsuarioService){
+    this.obtenerUsuarios(localStorage.getItem('idUsuario') as string)
+  }
+
+  obtenerUsuarios (id:string){
+    this.usuariosService.obtenerusuarios(id)
+    .subscribe (
+      (datos)=>{
+        console.log(datos); 
+        this.dataSource = datos;
+      }
+    )
+  }
 
 }
