@@ -18,7 +18,7 @@ export class UsuarioService {
     }
 
     validarInicioSesion(correo: string, contrasena: string): Observable<Respuesta> {
-        let url = this.apiUrl + 'validar-iniciosesion'+`?correo=${correo}&passw=${contrasena}`;
+        let url = this.apiUrl + 'validar-iniciosesion' + `?correo=${correo}&contrasena=${contrasena}`;
         return this.http.get<Respuesta>(`${url}`);
     }
 
@@ -27,4 +27,13 @@ export class UsuarioService {
         return this.http.post<Respuesta>(`${url}`, usuario);
     }
 
+    validarCorreo(correo: string): Observable<Respuesta> {
+        let url = this.apiUrl + 'validar-correo' + `?correo=${correo}`;
+        return this.http.get<Respuesta>(`${url}`);
+    }
+
+    actualizarContrasena(id: string, contrasena: string): Observable<Respuesta> {
+        let url = this.apiUrl + 'cambiar-contrasena' + `?id=${id}&contrasena=${contrasena}`;
+        return this.http.put<Respuesta>(`${url}`, this.usuario);
+    }
 }
