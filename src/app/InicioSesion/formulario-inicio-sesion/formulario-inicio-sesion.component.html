@@ -1,5 +1,5 @@
-<div class="card">
-    <mat-card>
+<div class="container">
+    <mat-card class="animate__animated animate__bounceInDown">
         <mat-card-title>
             <h1>Inicio Sesion</h1>
         </mat-card-title>
@@ -29,8 +29,15 @@
                     <mat-error *ngIf="mensajeErrorCampoRequerido('contrasena','required')">{{
                         mensajeErrorCampoRequerido('contrasena','required') }}</mat-error>
                 </mat-form-field>
-                <button mat-raised-button color="accent" type="submit">Iniciar sesion</button>
-            </form>
-        </mat-card-content>
+                <button mat-raised-button color="primary" type="submit">Iniciar sesion</button>
+            </form>            
+        </mat-card-content>            
+        <mat-card-actions>
+            <hr>
+            <div class="botones">
+                <button mat-button (click)="registrarUsuario()" color="accent" >Registrar nuevo usuario</button>
+                <button mat-button (click)="restablecerContrasena()" >¿Olvidaste tu contraseña?</button>
+            </div>
+        </mat-card-actions>
     </mat-card>
 </div>

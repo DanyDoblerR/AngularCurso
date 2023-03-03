@@ -55,5 +55,10 @@ export class FormularioInicioSesionComponent {
     return '';
   } 
   
-
+  registrarUsuario(){
+    this.router.navigate(['/registrar-usuario']);
+  }
+  restablecerContrasena(){
+    this.router.navigate(['/restablecer-contrasena']);
+  }
 }

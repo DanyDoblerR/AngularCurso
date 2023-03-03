@@ -1,1 +1,63 @@
-<p>formulario-restablecer-contrasena works!</p>
+<div class="container">
+    <mat-card class="animate__animated animate__bounceInDown">
+        <mat-card-title>
+            <h1>Restablecer contraseña</h1>
+        </mat-card-title>
+        <mat-card-subtitle *ngIf="!mostrarCamposContrasena">
+            <h2>
+                Coloca tu correo para verificar si existe una cuenta asociada
+            </h2>
+        </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="mostrarCamposContrasena">
+            <h2>
+                Coloca tu nueva contraseña
+            </h2>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <div *ngIf="!mostrarCamposContrasena">
+                <form [formGroup]="datosUsuario" (ngSubmit)="validarCorreo(datosUsuario.value)" validate>
+                    <mat-form-field>
+                        <mat-label>Ingresa tu correo electronico</mat-label>
+                        <input matInput placeholder="correo@ejempo.com" formControlName="correo" required>
+                        <mat-error *ngIf="mensajeErrorCampoRequerido('correo','required')">{{
+                            mensajeErrorCampoRequerido('correo','required') }}</mat-error>
+                        <mat-error *ngIf="mensajeErrorCorreoFormato('correo','email')">{{
+                            mensajeErrorCorreoFormato('correo','email') }}</mat-error>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit">Verificar correo electronico</button>
+                </form>
+            </div>
+            <div *ngIf="mostrarCamposContrasena">
+                <form [formGroup]="datosUsuario" (ngSubmit)="cambiarContrasena(datosUsuario.value)" validate>
+                    <mat-form-field>
+                        <mat-label>Ingresa tu nueva contraseña</mat-label>
+                        <input formControlName="contrasena" matInput [type]="mostrarContrasena ? 'password' : 'text'"
+                            required>
+                        <a mat-icon-button matSuffix (click)="mostrarContrasena = !mostrarContrasena"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="mostrarContrasena">
+                            <mat-icon>{{mostrarContrasena ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </a>
+                        <mat-error *ngIf="mensajeErrorCampoRequerido('contrasena','required')">{{
+                            mensajeErrorCampoRequerido('contrasena','required') }}</mat-error>
+                        <mat-error *ngIf="mensajeErrorNoCoincide('contrasena','notSame')">{{
+                            mensajeErrorNoCoincide('contrasena','notSame') }}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Vuelve a escribir tu contraseña</mat-label>
+                        <input formControlName="verificacionContrasena" matInput
+                            [type]="mostrarContrasenaVerifica ? 'password' : 'text'" required>
+                        <a mat-icon-button matSuffix (click)="mostrarContrasenaVerifica = !mostrarContrasenaVerifica"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="mostrarContrasenaVerifica">
+                            <mat-icon>{{mostrarContrasenaVerifica ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </a>
+                        <mat-error *ngIf="mensajeErrorCampoRequerido('verificacionContrasena','required')">{{
+                            mensajeErrorCampoRequerido('verificacionContrasena','required') }}</mat-error>
+                        <mat-error *ngIf="mensajeErrorNoCoincide('contrasena','notSame')">{{
+                            mensajeErrorNoCoincide('contrasena','notSame') }}</mat-error>
+                    </mat-form-field>
+                    <button mat-raised-button color="accent" type="submit">Cambiar contraseña</button>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
