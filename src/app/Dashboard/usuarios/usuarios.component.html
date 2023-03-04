@@ -1,3 +1,7 @@
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"routerLink="/inicio-sesion">
+    <mat-icon>exit_to_app</mat-icon>
+</button>
+
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- Columna Nombre -->
     <ng-container matColumnDef="nombres">
@@ -35,10 +39,26 @@
         <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
     </ng-container>
 
-    <!-- Columna sexo -->
+    <!-- Columna contraseña -->
     <ng-container matColumnDef="contraseña">
         <mat-header-cell *matHeaderCellDef> Contraseña </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.contrasena}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna botones -->
+    <ng-container matColumnDef="botones">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>replay</mat-icon>
+            </button>
+
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+
+        </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
