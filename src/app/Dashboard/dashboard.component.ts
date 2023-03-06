@@ -4,16 +4,9 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-name',
 
     template : `
-<<<<<<< HEAD
-    <div>
-
-    template : ` 
     <div>
         <app-navbar></app-navbar>
 
-=======
-    <div class="container">
->>>>>>> parent of 0a03594 (añadi funcionalidades)
         <router-outlet></router-outlet>
     </div>
     `

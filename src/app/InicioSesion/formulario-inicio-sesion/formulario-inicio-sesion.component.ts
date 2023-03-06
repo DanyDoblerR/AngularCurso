@@ -26,12 +26,12 @@ export class FormularioInicioSesionComponent {
   }
 
   enviarDatos(infoUsuario: Usuario) {
-    if (infoUsuario.correo === '' || infoUsuario.contrasena === '') {
-      alert('Favor de llenar todos los campos');      
+    if (infoUsuario.email === '' || infoUsuario.contrasena === '') {
+      alert('Favor de llenar todos los campos');
     }else{
-      this.usuarioService.validarInicioSesion(infoUsuario.correo, infoUsuario.contrasena)
-      .subscribe( (respuesta: any) => {        
-        if (respuesta.message === 'Inicio sesion correcto') {          
+      this.usuarioService.validarInicioSesion(infoUsuario.email, infoUsuario.contrasena)
+      .subscribe( (respuesta: any) => {
+        if (respuesta.message === 'Inicio sesion correcto') {
           this.router.navigate(['/dashboard']);
           localStorage.setItem('idUsuario', respuesta.id);
         } else {
@@ -43,7 +43,7 @@ export class FormularioInicioSesionComponent {
   mensajeErrorCampoRequerido(controlName: string, errorName: string) {
     if (this.datosUsuario.controls[controlName].hasError('required')) {
       return `El campo ${ controlName } es requerido`;
-    }    
+    }
     return '';
   }
 
@@ -52,8 +52,8 @@ export class FormularioInicioSesionComponent {
       return 'El correo no es válido';
     }
     return '';
-  } 
-  
+  }
+
   registrarUsuario(){
     this.router.navigate(['/registrar-usuario']);
   }
