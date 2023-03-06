@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,10 @@ import { Component } from '@angular/core';
     `
     .navbar {            
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;    
             background-color: #3f51b5;
-            flex-direction: column;
+            flex-direction: row;
             gap: 2px;
             height: 7rem;
             color: white;
@@ -25,4 +26,21 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  constructor(private router: Router){}
+
+  cerrarSesion(){
+    let result = confirm("¿Deseas cerrar sesion?");
+    if (result) {
+      localStorage.clear();
+      this.router.navigate(['/inicio-sesion']);
+    }
+  }
+
+  usuarios(){
+    this.router.navigate(['/dashboard/usuarios']);
+  }
+
+  perfil(){
+    this.router.navigate(['/dashboard/perfil']);
+  }
 }

@@ -24,7 +24,6 @@ export class UsuariosComponent {
     this.usuariosService.obtenerusuarios(id)
     .subscribe (
       (datos)=>{
-        console.log(datos); 
         this.dataSource = datos;
       }
     )
