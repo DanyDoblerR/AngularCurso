@@ -13,7 +13,6 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent,      
     DashboardComponent,
     PerfilComponent,
     UsuariosComponent,

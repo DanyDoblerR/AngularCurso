@@ -5,7 +5,7 @@ export class Usuario {
     nombres: string;
     apellidoPaterno: string;
     apellidoMaterno: string;
-    correo: string;
+    email: string;
     telefono: number;
     gender: string;
     contrasena: string;
@@ -16,7 +16,7 @@ export class Usuario {
         this.nombres = '';
         this.apellidoPaterno = '';
         this.apellidoMaterno = '';
-        this.correo = '';
+        this.email = '';
         this.contrasena = '';
         this.gender = '';
         this.telefono = 0;

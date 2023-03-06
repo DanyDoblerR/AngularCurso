@@ -36,7 +36,6 @@ export class UsuarioService {
         let url = this.apiUrl + 'cambiar-contrasena' + `?id=${id}&contrasena=${contrasena}`;
         return this.http.put<Respuesta>(`${url}`, this.usuario);
     }
-
     editarUsuario(id: string): Observable<Usuario> {
       let url = this.apiUrl + 'editar-usuario' + `?id=${id}`;
       return this.http.get<Usuario>(`${url}`);
@@ -60,4 +59,6 @@ export class UsuarioService {
        let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
        return this.http.get<Usuario[]>(`${url}`)
     }
+
 }
+
