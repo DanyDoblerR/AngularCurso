@@ -8,13 +8,8 @@ import { Router } from '@angular/router';
     `
     .navbar {
             display: flex;
-<<<<<<< HEAD
-            justify-content: center;
-            align-items: center;
-=======
             justify-content: space-between;
             align-items: center;    
->>>>>>> 586b01b2347f9da3e7bc73005d25ec6ae047e3d7
             background-color: #3f51b5;
             flex-direction: row;
             gap: 2px;
