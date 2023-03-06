@@ -25,7 +25,7 @@ export class FormularioRegistroUsuarioComponent {
       nombres: new FormControl('', [Validators.required]),
       apellidoPaterno: new FormControl('', [Validators.required]),
       apellidoMaterno: new FormControl('', [Validators.required]),
-      correo: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       telefono: new FormControl('', [Validators.required, Validators.pattern('[0-9]{10}')]),
       gender: new FormControl('', [Validators.required]),
       contrasena: new FormControl('', [Validators.required]),
@@ -66,7 +66,7 @@ export class FormularioRegistroUsuarioComponent {
           return 'El campo apellido paterno es requerido';
         case 'apellidoMaterno':
           return 'El campo apellido materno es requerido';
-        case 'correo':
+        case 'email':
           return 'El campo correo es requerido';
         case 'telefono':
           return 'El campo telefono es requerido';

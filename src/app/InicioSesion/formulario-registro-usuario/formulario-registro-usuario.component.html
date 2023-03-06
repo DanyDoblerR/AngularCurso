@@ -34,13 +34,13 @@
                 </table>
                 <mat-form-field>
                     <mat-label>Correo electronico</mat-label>
-                    <input matInput placeholder="correo@ejempo.com" formControlName="correo" required>
-                    <mat-error *ngIf="mensajeErrorCampoRequerido('correo','required')">{{
-                        mensajeErrorCampoRequerido('correo','required') }}</mat-error>
-                    <mat-error *ngIf="mensajeErrorCorreoFormato('correo','email')">{{
-                        mensajeErrorCorreoFormato('correo','email') }}</mat-error>
-                    <mat-error *ngIf="mesajeErrorCorreoDuplicado('correo','duplicate')">
-                        {{mesajeErrorCorreoDuplicado('correo','duplicate')}}
+                    <input matInput placeholder="correo@ejempo.com" formControlName="email" required>
+                    <mat-error *ngIf="mensajeErrorCampoRequerido('email','required')">{{
+                        mensajeErrorCampoRequerido('email','required') }}</mat-error>
+                    <mat-error *ngIf="mensajeErrorCorreoFormato('email','email')">{{
+                        mensajeErrorCorreoFormato('email','email') }}</mat-error>
+                    <mat-error *ngIf="mesajeErrorCorreoDuplicado('email','duplicate')">
+                        {{mesajeErrorCorreoDuplicado('email','duplicate')}}
                         <a href="/restablecer-contrasena">¿Olvidaste tu contraseña?</a>
                     </mat-error>
                 </mat-form-field>
