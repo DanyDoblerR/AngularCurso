@@ -36,8 +36,26 @@ export class UsuarioService {
         let url = this.apiUrl + 'cambiar-contrasena' + `?id=${id}&contrasena=${contrasena}`;
         return this.http.put<Respuesta>(`${url}`, this.usuario);
     }
-
-    obtenerusuarios(id: string): Observable<Usuario[]> {
+    editarUsuario(id: string): Observable<Usuario> {
+      let url = this.apiUrl + 'editar-usuario' + `?id=${id}`;
+      return this.http.get<Usuario>(`${url}`);
+  }
+    obtenerUsuario(id: string):Observable<Usuario> {
+      if (id.includes('USER')) {
+        let url = this.apiUrl+'obtener-usuario'+'/'+id;
+        return this.http.get<Usuario>(`${url}`);
+      }else{
+        let url = this.apiUrl+'obtener-usuarioId'+'/'+id;
+        return this.http.get<Usuario>(`${url}`);
+      }
+    }
+     actualizarUsuario(id:string , perfil: Usuario):Observable<Respuesta> {
+      let url = this.apiUrl+'actualizar-usuario/'+id;
+      console.log(url);
+      console.log(perfil);
+      return this.http.put<Respuesta>(`${url}`, perfil);
+    }
+  obtenerusuarios(id: string): Observable<Usuario[]> {
        let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
        return this.http.get<Usuario[]>(`${url}`)
     }
@@ -47,3 +65,4 @@ export class UsuarioService {
        return this.http.delete<Usuario[]>(`${url}`)
     }
 }
+

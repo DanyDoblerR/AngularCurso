@@ -31,8 +31,8 @@ export class FormularioRestablecerContrasenaComponent {
     if (this.datosUsuario.controls['correo'].value === '') {
       alert('Favor de llenar todos los campos');
     } else {
-      this.usuarioService.validarCorreo(infoUsuario.correo)
-        .subscribe((data) => {                   
+      this.usuarioService.validarCorreo(infoUsuario.email)
+        .subscribe((data) => {
           if (data.message === 'Usuario no encontrado') {
             alert(data.message);
           } else if (data.message === 'Usuaro encontrado') {
@@ -49,20 +49,20 @@ export class FormularioRestablecerContrasenaComponent {
     } else {
       if (this.datosUsuario.controls['contrasena'].value !== this.datosUsuario.controls['verificacionContrasena'].value) {
         this.datosUsuario.controls['contrasena'].setErrors({ 'notSame': true });
-      } else {      
+      } else {
         let id = localStorage.getItem('idUsuario') as string;
         this.usuarioService.actualizarContrasena(id,infoUsuario.contrasena)
         .subscribe((data) => {
           if (data.message === 'Contraseña actualizada') {
             alert('Cambio de contraseña correcto');
-            localStorage.removeItem('idUsuario');                     
+            localStorage.removeItem('idUsuario');
             this.router.navigate(['/inicio-sesion']);
           }else{
             alert('Algo salio mal' + data.message);
           }
           });
       }
-    }    
+    }
   }
 
 
