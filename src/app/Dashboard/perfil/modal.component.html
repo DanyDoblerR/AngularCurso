@@ -1,11 +1,17 @@
-<h2 mat-dialog-title>Actualizar datosr</h2>
+<h2 mat-dialog-title>Actualizar datos</h2>
 <mat-dialog-content class="mat-typography">
   <form [formGroup]="datosUsuario" (ngSubmit)="actualizarUSuario(datosUsuario.value)" novalidate>
   <mat-vertical-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel>Ingresa datos personales</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          <input matInput value="{{perfil.nombres}}" placeholder="Nombres" formControlName="nombres" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.apellidoPaterno}}"  placeholder="Apellido paterno" formControlName="apellidoPaterno" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.apellidoMaterno}}" placeholder="Apellido materno" formControlName="apellidoMaterno" required>
         </mat-form-field>
       </mat-step>
       <mat-step [stepControl]="secondFormGroup">

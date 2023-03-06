@@ -34,7 +34,6 @@ export class PerfilComponent {
 
       this.usuarioService.obtenerUsuario(this.id)
       .subscribe((data:Usuario) => {
-        console.log(usuarioService)
         this.perfil = data;
         this.datosUsuario.controls['nombres'].setValue(data.nombres);
         this.datosUsuario.controls['apellidoPaterno'].setValue(data.apellidoPaterno);
@@ -154,4 +153,3 @@ export class DialogContentExampleDialog {
         console.log(data))
     }
 }
-
