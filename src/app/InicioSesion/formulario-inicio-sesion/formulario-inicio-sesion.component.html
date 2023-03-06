@@ -12,11 +12,11 @@
             <form [formGroup]="datosUsuario" (ngSubmit)="enviarDatos(datosUsuario.value)" validate>
                 <mat-form-field>
                     <mat-label>Ingresa tu correo electronico</mat-label>
-                    <input matInput placeholder="correo@ejempo.com" formControlName="correo" required>
-                    <mat-error *ngIf="mensajeErrorCampoRequerido('correo','required')">{{
-                        mensajeErrorCampoRequerido('correo','required') }}</mat-error>
-                    <mat-error *ngIf="mensajeErrorCorreoFormato('correo','email')">{{
-                        mensajeErrorCorreoFormato('correo','email') }}</mat-error>
+                    <input matInput placeholder="correo@ejempo.com" formControlName="email" required>
+                    <mat-error *ngIf="mensajeErrorCampoRequerido('email','required')">{{
+                        mensajeErrorCampoRequerido('email','required') }}</mat-error>
+                    <mat-error *ngIf="mensajeErrorCorreoFormato('email','email')">{{
+                        mensajeErrorCorreoFormato('email','email') }}</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label>Ingresa tu contraseña</mat-label>

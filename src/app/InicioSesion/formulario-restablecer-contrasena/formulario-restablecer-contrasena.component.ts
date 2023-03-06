@@ -21,7 +21,7 @@ export class FormularioRestablecerContrasenaComponent {
     private usuarioService: UsuarioService
   ) {
     this.datosUsuario = this.formBuilder.group({
-      correo: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       contrasena: new FormControl('', [Validators.required]),
       verificacionContrasena: new FormControl('', [Validators.required])
     });
