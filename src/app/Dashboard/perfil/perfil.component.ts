@@ -39,7 +39,7 @@ export class PerfilComponent {
         this.datosUsuario.controls['nombres'].setValue(data.nombres);
         this.datosUsuario.controls['apellidoPaterno'].setValue(data.apellidoPaterno);
         this.datosUsuario.controls['apellidoMaterno'].setValue(data.apellidoMaterno);
-        this.datosUsuario.controls['email'].setValue(data.correo);
+        this.datosUsuario.controls['email'].setValue(data.email);
         this.datosUsuario.controls['telefono'].setValue(data.telefono);
         this.datosUsuario.controls['gender'].setValue(data.gender);
         this.datosUsuario.controls['contrasena'].setValue(data.contrasena);
@@ -120,7 +120,7 @@ export class DialogContentExampleDialog {
         this.datosUsuario.controls['nombres'].setValue(data.nombres);
         this.datosUsuario.controls['apellidoPaterno'].setValue(data.apellidoPaterno);
         this.datosUsuario.controls['apellidoMaterno'].setValue(data.apellidoMaterno);
-        this.datosUsuario.controls['email'].setValue(data.correo);
+        this.datosUsuario.controls['email'].setValue(data.email);
         this.datosUsuario.controls['telefono'].setValue(data.telefono);
         this.datosUsuario.controls['gender'].setValue(data.gender);
         this.datosUsuario.controls['contrasena'].setValue(data.contrasena);
@@ -148,18 +148,11 @@ export class DialogContentExampleDialog {
         this.datosUsuario.controls['contrasena'].enable();
       }
     }
-
-
-    /*actualizarUsuario(perfil: Usuario) {
-      console.log(perfil);
-      let id = localStorage.getItem('idUsuario') as string;
-      this.usuarioService.actualizarUsuario(id,perfil.nombres, perfil.apellidoPaterno, perfil.apellidoMaterno, perfil.correo, perfil.telefono, perfil.gender, perfil.contrasena)
-        .subscribe((data) => {
-          if (data.message === 'Usuario actualizado') {
-            alert('Cambio de usuario correcto');
-          }else{
-            alert('Algo salio mal' + data.message);
-          }
-        });
-  }*/
+    actualizarUSuario(from:Usuario){
+      console.log(from)
+      this.usuarioService.actualizarUsuario(this.id,from).subscribe(data=>
+        console.log(data))
+    }
 }
+
+

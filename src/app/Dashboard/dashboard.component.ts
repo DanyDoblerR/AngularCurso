@@ -5,9 +5,6 @@ import { Component, OnInit } from '@angular/core';
 
     template : `
     <div>
-
-    template : ` 
-    <div>
         <app-navbar></app-navbar>
 
         <router-outlet></router-outlet>
