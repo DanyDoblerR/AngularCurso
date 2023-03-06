@@ -1,40 +1,50 @@
-<h2 mat-dialog-title>Actualizar datosr</h2>
+<h2 mat-dialog-title>Actualizar datos</h2>
 <mat-dialog-content class="mat-typography">
-
-  <button mat-raised-button (click)="isEditable = !isEditable">
-    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
-  </button>
-
   <mat-vertical-stepper [linear]="false" #stepper>
     <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup">
-        <ng-template matStepLabel>Fill out your name</ng-template>
+      <form [formGroup]="datosUsuario"  novalidate>
+        <ng-template matStepLabel>Ingresa datos personales</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+          <input matInput value="{{perfil.nombres}}" placeholder="Nombres" formControlName="nombres" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.apellidoPaterno}}"  placeholder="Apellido paterno" formControlName="apellidoPaterno" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.apellidoMaterno}}" placeholder="Apellido materno" formControlName="apellidoMaterno" required>
         </mat-form-field>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
-      <form [formGroup]="secondFormGroup">
-        <ng-template matStepLabel>Fill out your address</ng-template>
+      <form [formGroup]="datosUsuario">
+        <ng-template matStepLabel>Ingresa los datos restantes</ng-template>
         <mat-form-field>
-          <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          <input type="email"  matInput  value="{{perfil.correo}}" placeholder="Correo" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.telefono}}"placeholder="telefono" formControlName="telefono" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput value="{{perfil.gender}}" placeholder="Genero" formControlName="gender" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  value="{{perfil.contrasena}}" matInput placeholder="Contraseña" formControlName="contrasena"  matInput [type]="this.camposEditar ? 'password' : 'text'">
         </mat-form-field>
         <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-button matStepperPrevious>Anterior</button>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
-      You are now done.
+      <ng-template matStepLabel>Realizado</ng-template>
+      Has Terminado?
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="stepper.reset()">Borrar todo</button>
       </div>
     </mat-step>
   </mat-vertical-stepper>
@@ -42,6 +52,8 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button  [mat-dialog-close]="true" cdkFocusInitial [disabled]="this.camposEditar" class="m-2 w-3" color="primary" type="submit">Actualizar Datos</button>
+  <button mat-raised-button (click)="activarFormEditar()" class="w-3" color="info">Editar Usuario</button>
 </mat-dialog-actions>
+
