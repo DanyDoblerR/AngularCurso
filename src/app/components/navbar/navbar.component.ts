@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styles: [
     `
-    .navbar {            
+    .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;    
