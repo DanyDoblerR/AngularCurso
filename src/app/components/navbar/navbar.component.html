@@ -1,15 +1,21 @@
 <mat-toolbar class="navbar">
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click) = "cerrarSesion()">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
     <div>
         <h1>Registro de usuarios</h1>
     </div>
     <div>
-        <button mat-button class="example-icon favorite-icon">
+        <button mat-button class="example-icon favorite-icon" (click) = "usuarios()">
             Mostrar Usuarios
             <mat-icon>group</mat-icon>
         </button>
-        <button mat-button class="example-icon" aria-label="Example icon-button with share icon">
-            Ver mi perfil
-            <mat-icon>share</mat-icon>
-        </button>
+        <a routerLink="/dashboard/perfil">
+            <button mat-button class="example-icon" aria-label="Example icon-button with share icon" (click) = "perfil()">
+                Ver mi perfil
+                <mat-icon>share</mat-icon>
+            </button>
+        </a>
     </div>
 </mat-toolbar>
