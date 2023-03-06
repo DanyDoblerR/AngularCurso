@@ -1,25 +1,37 @@
 <div class="container">
   <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image">
-      <mat-icon>person</mat-icon>
-    </div>
-    <mat-card-title>Nombre: <h1>{{perfil.nombres+ " "}}</h1></mat-card-title>
-    <mat-card-subtitle>Apellido <h2>{{perfil.apellidoPaterno+" "+perfil.apellidoMaterno}}</h2></mat-card-subtitle>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <mat-icon>person</mat-icon>
+      </div>
+      <mat-card-title>Nombre</mat-card-title>
+      <mat-card-subtitle>Apellido</mat-card-subtitle>
+    </mat-card-header>
 
+    <mat-card-content>
+      <p>
+        <label>Nombre</label>
+      </p>
+      <p>
+        <label>Apellido paterno</label>
+      </p>
+      <p>
+        <label>Apellido materno</label>
+      </p>
+      <p>
+        <label>Correo</label>
+      </p>
+      <p>
+        <label>Sexo</label>
+      </p>
+      <p>
+        <label>Contraseña</label>
+      </p>
 
-  </mat-card-header>
-  <mat-card-content>
-    <h1>Email: </h1><h2> {{perfil.correo}}</h2>
-    <h1>Telefono: </h1><h2>no: {{perfil.telefono}}</h2>
-    <h1>Sexo: </h1><h2>{{perfil.gender}}</h2>
-    <h1>Contraseña:</h1><h2>seña: {{perfil.contrasena}}</h2>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="openDialog()">Actualizar</button>
-  </mat-card-actions>
-</mat-card>
-
-
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="openDialog()">Actualizarn</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 

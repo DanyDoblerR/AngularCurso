@@ -36,6 +36,7 @@ export class UsuarioService {
         let url = this.apiUrl + 'cambiar-contrasena' + `?id=${id}&contrasena=${contrasena}`;
         return this.http.put<Respuesta>(`${url}`, this.usuario);
     }
+<<<<<<< HEAD
 
    /* obtenerUsuario(id: String ){
       return this.http.get(`${this.apiUrl}/usuarios/${id}`);
@@ -68,4 +69,6 @@ export class UsuarioService {
        let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
        return this.http.get<Usuario[]>(`${url}`)
     }
+=======
+>>>>>>> parent of 0a03594 (añadi funcionalidades)
 }
