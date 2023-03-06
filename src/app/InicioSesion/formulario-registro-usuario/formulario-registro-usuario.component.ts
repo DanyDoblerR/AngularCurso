@@ -13,7 +13,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class FormularioRegistroUsuarioComponent {
 
   datosUsuario !: FormGroup;
-  mostrarContrasena: boolean = false;
+  mostrarContrasena: boolean = true;
   removableInput: boolean = false;
 
   constructor(
@@ -46,7 +46,7 @@ export class FormularioRegistroUsuarioComponent {
               break;
             case 'Usuario ya existe':
               alert(data.message);
-              this.datosUsuario.controls['correo'].setErrors({ 'duplicate': true });
+              this.datosUsuario.controls['email'].setErrors({ 'duplicate': true });
               break;
             default:
               alert(data.message);
