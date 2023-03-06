@@ -1,0 +1,35 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Datos del Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><label>Nombre: </label>{{ nombre }}</p>
+      <p><label>Apellido: </label>{{ apellido }}</p>
+      <p><label>Correo: </label>{{ correo }}</p>
+      <p><label>Telefono: </label>{{ telefono }}</p>
+      <p><label>Sexo: </label> {{ sexo }}</p>
+      <mat-divider></mat-divider>
+    </mat-card-content>  
+</mat-card>
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Nuevos Datos Del Usuario</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><label>Nombre: </label> <input type="text"  placeholder="Ingrese Nombre" [(ngModel)]="nombreCambio"></p> 
+      <p><label>Apellido: </label> <input type="text" placeholder="Ingrese Apellido" [(ngModel)]="apellidoCambio"></p>
+      <p><label>Correo: </label> <input type="text" placeholder="Ingrese su nuevo correo" [(ngModel)]="correoCambio"></p>
+      <p><label>Telefono: </label> <input type="text" placeholder="Ingrese su nuevo telefono" [(ngModel)]="telefonoCambio"></p>
+      <p><label>Sexo: </label> <input type="text" placeholder="Ingrese su sexo" [(ngModel)]="sexoCambio"></p>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="Actualizar Datos" (click)="actualizar()">Actualizar Datos</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+  </mat-card>
+
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"routerLink="/menu">
+   <mat-icon>exit_to_app</mat-icon>
+</button>

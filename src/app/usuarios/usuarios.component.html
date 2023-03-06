@@ -1,0 +1,53 @@
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"routerLink="/menu">
+  <mat-icon>exit_to_app</mat-icon>
+</button>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Nombre:  </span>
+      <input type="text" placeholder="Ingrese su Usuario" [(ngModel)]="nombre">
+      <span>Apellido:  </span>
+      <input type="text" placeholder="Ingrese su Apellido" [(ngModel)]="apellido">
+      <span>Correo:  </span>
+      <input type="text" name="Correo" placeholder="Ingrese su Correo" [(ngModel)]="correo">
+      <span>Telefono:  </span>
+      <input type="text" name="Telefono" placeholder="Ingrese su Telefono" [(ngModel)]="telefono">
+      <span>Sexo:  </span>
+      <input type="text" name="Sexo" placeholder="Ingrese su Sexo" [(ngModel)]="sexo">
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>playlist_add</mat-icon>
+      </button>
+</mat-toolbar-row>
+
+Agregar y Eliminar Usuarios
+Nombre: Jesus  Apellido: Rosales  Correo: Yizzuz@gmail.com  Telefono: 5512436587  Sexo: Hombre
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>
+        <label>Nombre: </label>{{ nombre }}
+      </span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="eliminar()">
+        <mat-icon>cancel_presentation</mat-icon>
+      </button>
+</mat-toolbar-row>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Nombre: Andres  Apellido: Gomez  Correo: Andru@gmail.com  Telefono: 5518467587  Sexo: Hombre</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>cancel_presentation</mat-icon>
+      </button>
+</mat-toolbar-row>
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Nombre: Aline  Apellido: Perez  Correo: Alynne@gmail.com  Telefono: 5512104792  Sexo: Mujer</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>cancel_presentation</mat-icon>
+      </button>
+</mat-toolbar-row>
+

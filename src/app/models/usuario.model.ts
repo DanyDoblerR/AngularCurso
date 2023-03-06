@@ -1,25 +1,25 @@
 
 export class Usuario {
-    
-    id: string;    
+
+    id: string;
     nombres: string;
     apellidoPaterno: string;
     apellidoMaterno: string;
-    correo: string;    
-    telefono: number;    
+    correo: string;
+    telefono: number;
     gender: string;
     contrasena: string;
-    imagenPerfil: any;   
-    
+    imagenPerfil: any;
+
     constructor() {
         this.id = '';
         this.nombres = '';
         this.apellidoPaterno = '';
         this.apellidoMaterno = '';
         this.correo = '';
-        this.contrasena = '';        
+        this.contrasena = '';
         this.gender = '';
-        this.telefono = 0; 
-        this.imagenPerfil = null;       
+        this.telefono = 0;
+        this.imagenPerfil = null;
     }
 }
