@@ -5,10 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styles: [
     `
-    .navbar {            
+    .navbar {
             display: flex;
             justify-content: center;
-            align-items: center;    
+            align-items: center;
             background-color: #3f51b5;
             flex-direction: column;
             gap: 2px;
