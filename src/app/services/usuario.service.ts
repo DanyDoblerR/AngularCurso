@@ -55,7 +55,7 @@ export class UsuarioService {
       console.log(perfil);
       return this.http.put<Respuesta>(`${url}`, perfil);
     }
-  obtenerusuarios(id: string): Observable<Usuario[]> {
+     obtenerusuarios(id: string): Observable<Usuario[]> {
        let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
        return this.http.get<Usuario[]>(`${url}`)
     }
