@@ -1,5 +1,4 @@
-import { Component,Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-aviso-alerta',
@@ -8,16 +7,5 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   ]
 })
 export class AvisoAlertaComponent {
-  message: string = '';
 
-  constructor(
-    private dialogRef: MatDialogRef<AvisoAlertaComponent>,
-    @Inject(MAT_DIALOG_DATA) data: { message: string }
-  ) {
-    this.message = data ? data.message : '';
-  }
-
-  closeAlert() {
-    this.dialogRef.close();
-  }
 }
