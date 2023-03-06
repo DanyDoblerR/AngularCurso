@@ -28,7 +28,7 @@ export class FormularioRestablecerContrasenaComponent {
   }
 
   validarCorreo(infoUsuario: Usuario) {
-    if (this.datosUsuario.controls['correo'].value === '') {
+    if (this.datosUsuario.controls['email'].value === '') {
       alert('Favor de llenar todos los campos');
     } else {
       this.usuarioService.validarCorreo(infoUsuario.email)
