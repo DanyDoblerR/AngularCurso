@@ -36,6 +36,7 @@ export class UsuarioService {
         let url = this.apiUrl + 'cambiar-contrasena' + `?id=${id}&contrasena=${contrasena}`;
         return this.http.put<Respuesta>(`${url}`, this.usuario);
     }
+
    /* obtenerUsuario(id: String ){
       return this.http.get(`${this.apiUrl}/usuarios/${id}`);
 
@@ -63,4 +64,8 @@ export class UsuarioService {
       let url = this.apiUrl + 'actualizar-usuario' + `?id=${id}&nombres=${nombres}&apellidoPaterno=${apellidoPaterno}&apellidomaterno=${apellidoMaterno}&correo=${correo}&telefono=${telefono}&gender=${gender}&contrasena=${contrasena}`;
       return this.http.put<Respuesta>(`${url}`, this.usuario);
   }*/
+  obtenerusuarios(id: string): Observable<Usuario[]> {
+       let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
+       return this.http.get<Usuario[]>(`${url}`)
+    }
 }

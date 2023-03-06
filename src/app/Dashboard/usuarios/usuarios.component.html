@@ -1,1 +1,66 @@
-<p>usuarios works!</p>
+<button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"routerLink="/inicio-sesion">
+    <mat-icon>exit_to_app</mat-icon>
+</button>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Columna Nombre -->
+    <ng-container matColumnDef="nombres">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.nombres }} </mat-cell>
+    </ng-container>
+
+    <!-- Columna Apellido paterno -->
+    <ng-container matColumnDef="apellidoPaterno">
+        <mat-header-cell *matHeaderCellDef> Apellido Paterno </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.apellidoPaterno}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna apellido materno -->
+    <ng-container matColumnDef="apellidoMaterno">
+        <mat-header-cell *matHeaderCellDef> Apellido Materno </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.apellidoMaterno}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna correo -->
+    <ng-container matColumnDef="correo">
+        <mat-header-cell *matHeaderCellDef> Correo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna telefono -->
+    <ng-container matColumnDef="telefono">
+        <mat-header-cell *matHeaderCellDef> Telefono </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.telefono}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna sexo -->
+    <ng-container matColumnDef="sexo">
+        <mat-header-cell *matHeaderCellDef> Sexo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna contraseña -->
+    <ng-container matColumnDef="contraseña">
+        <mat-header-cell *matHeaderCellDef> Contraseña </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.contrasena}} </mat-cell>
+    </ng-container>
+
+    <!-- Columna botones -->
+    <ng-container matColumnDef="botones">
+        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>replay</mat-icon>
+            </button>
+
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
