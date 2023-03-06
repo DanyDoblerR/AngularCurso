@@ -16,6 +16,10 @@ export class UsuariosComponent {
     this.obtenerUsuarios(localStorage.getItem('idUsuario') as string)
   }
 
+  refresh(): void { 
+    window.location.reload();
+  }
+
   obtenerUsuarios (id:string){
     this.usuariosService.obtenerusuarios(id)
     .subscribe (
@@ -26,4 +30,12 @@ export class UsuariosComponent {
     )
   }
 
+  eliminarUsuarios (id:string){
+   this.usuariosService.eliminarusuarios(id)
+   .subscribe(
+    (datos)=>{
+      this.dataSource =datos;
+    }
+   )
+  }
 }

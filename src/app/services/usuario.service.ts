@@ -41,4 +41,9 @@ export class UsuarioService {
        let url = this.apiUrl + 'obtener-usuarios' + `?id=${id}`;
        return this.http.get<Usuario[]>(`${url}`)
     }
+
+    eliminarusuarios(id: string): Observable<Usuario[]>{
+       let url = this.apiUrl + 'eliminar-usuarios' + `?id=${id}`;
+       return this.http.delete<Usuario[]>(`${url}`)
+    }
 }
