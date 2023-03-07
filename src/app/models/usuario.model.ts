@@ -7,9 +7,9 @@ export class Usuario {
     apellidoMaterno: string;
     email: string;
     telefono: number;
-    gender: string;
-    contrasena: string;
-    imagenPerfil: any;
+    sexo: number;
+    contrasena: string;    
+    domicilios: string[];
 
     constructor() {
         this.id = '';
@@ -18,8 +18,8 @@ export class Usuario {
         this.apellidoMaterno = '';
         this.email = '';
         this.contrasena = '';
-        this.gender = '';
-        this.telefono = 0;
-        this.imagenPerfil = null;
+        this.sexo = 0;
+        this.telefono = 0;     
+        this.domicilios = [];   
     }
 }

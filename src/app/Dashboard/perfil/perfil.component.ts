@@ -40,7 +40,7 @@ export class PerfilComponent {
         this.datosUsuario.controls['apellidoMaterno'].setValue(data.apellidoMaterno);
         this.datosUsuario.controls['email'].setValue(data.email);
         this.datosUsuario.controls['telefono'].setValue(data.telefono);
-        this.datosUsuario.controls['gender'].setValue(data.gender);
+        this.datosUsuario.controls['gender'].setValue(data.sexo);
         this.datosUsuario.controls['contrasena'].setValue(data.contrasena);
       });
 
@@ -54,7 +54,7 @@ export class PerfilComponent {
         this.datosUsuario.controls['apellidoMaterno'].disable();
         this.datosUsuario.controls['email'].disable();
         this.datosUsuario.controls['telefono'].disable();
-        this.datosUsuario.controls['gender'].disable();
+        this.datosUsuario.controls['sexo'].disable();
         this.datosUsuario.controls['contrasena'].disable();
       } else {
         this.datosUsuario.controls['nombres'].enable();
@@ -62,7 +62,7 @@ export class PerfilComponent {
         this.datosUsuario.controls['apellidoMaterno'].enable();
         this.datosUsuario.controls['email'].enable();
         this.datosUsuario.controls['telefono'].enable();
-        this.datosUsuario.controls['gender'].enable();
+        this.datosUsuario.controls['sexo'].enable();
         this.datosUsuario.controls['contrasena'].enable();
       }
     }
@@ -91,7 +91,7 @@ export class DialogContentExampleDialog {
     apellidoMaterno: new FormControl(''),
     email: new FormControl(''),
     telefono: new FormControl(''),
-    gender: new FormControl(''),
+    sexo: new FormControl(''),
     contrasena: new FormControl(''),
   });
 
@@ -121,7 +121,7 @@ export class DialogContentExampleDialog {
         this.datosUsuario.controls['apellidoMaterno'].setValue(data.apellidoMaterno);
         this.datosUsuario.controls['email'].setValue(data.email);
         this.datosUsuario.controls['telefono'].setValue(data.telefono);
-        this.datosUsuario.controls['gender'].setValue(data.gender);
+        this.datosUsuario.controls['gender'].setValue(data.sexo);
         this.datosUsuario.controls['contrasena'].setValue(data.contrasena);
       });
 
