@@ -63,27 +63,27 @@ export class FormularioRegistroUsuarioComponent {
 
   registrarUsuario(infoUsuario: Usuario) {
     console.log(infoUsuario);
-    // if (this.datosUsuario.invalid) {
-    //   alert('Favor de llenar todos los campos');
-    // } else {
-    //   this.usuarioService.registrarUsuario(infoUsuario).subscribe(
-    //     (data) => {
-    //       switch (data.message) {
-    //         case 'Registro de usuario correcto':
-    //           alert(data.message);
-    //           this.router.navigate(['/inicio-sesion']);
-    //           break;
-    //         case 'Usuario ya existe':
-    //           alert(data.message);
-    //           this.datosUsuario.controls['email'].setErrors({ 'duplicate': true });
-    //           break;
-    //         default:
-    //           alert(data.message);
-    //           break;
-    //       }
-    //     }
-    //   );
-    // }
+    if (this.datosUsuario.invalid) {
+      alert('Favor de llenar todos los campos');
+    } else {
+      this.usuarioService.registrarUsuario(infoUsuario).subscribe(
+        (data) => {
+          switch (data.message) {
+            case 'Registro de usuario correcto':
+              alert(data.message);
+              this.router.navigate(['/inicio-sesion']);
+              break;
+            case 'Usuario ya existe':
+              alert(data.message);
+              this.datosUsuario.controls['email'].setErrors({ 'duplicate': true });
+              break;
+            default:
+              alert(data.message);
+              break;
+          }
+        }
+      );
+    }
   }
   
   //* Funciones para el manejo de domicilios
