@@ -29,7 +29,7 @@ form, .ng-pristine, .ng-invalid, .ng-touched{
 }
 mat-card-actions{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 .botones{
     display: flex;

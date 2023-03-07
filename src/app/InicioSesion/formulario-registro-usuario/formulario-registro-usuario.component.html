@@ -44,7 +44,7 @@
                                 mensajeErrorCampoRequerido('sexo','required') }}</mat-error>
                         </mat-form-field>
 
-                        <div>
+                        <div class="botones">
                             <button mat-raised-button matStepperNext type="button">Siguiente</button>
                         </div>
                     </form>
@@ -78,8 +78,8 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <button mat-raised-button type="button" (click)="agregarDomicilio()">Añadir Domicilio Nuevo</button>
-                        <div>
+                        <div class="botones">
+                            <button mat-raised-button type="button" color="primary" (click)="agregarDomicilio()">Añadir Domicilio Nuevo</button>
                             <button mat-raised-button matStepperPrevious>Regresar</button>
                             <button mat-raised-button matStepperNext type="button">Siguiente</button>
                         </div>
@@ -112,7 +112,7 @@
                             <mat-error *ngIf="mensajeErrorCampoRequerido('contrasena','required')">{{
                                 mensajeErrorCampoRequerido('contrasena','required') }}</mat-error>
                         </mat-form-field>
-                        <div>
+                        <div class="botones">
                             <button mat-raised-button matStepperPrevious>Regresar</button>
                             <button mat-raised-button (click)="stepper.reset()">Limpiar registros</button>
                             <button mat-raised-button color="accent" type="submit"
