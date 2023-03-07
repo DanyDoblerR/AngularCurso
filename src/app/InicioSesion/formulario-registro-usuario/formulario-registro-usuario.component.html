@@ -71,7 +71,7 @@
                                     <div [formGroupName]="i">
                                         <input matInput type="text" formControlName="domicilio"
                                             placeholder="Calle, número, apartamento. Código postal + Localidad + Departamento">
-                                    </div>
+                                    </div>                                    
                                     <button mat-button (click)="eliminarDomicilio(i)">Quitar Domicilio</button>
                                     <mat-error *ngIf="mensajeErrorCampoRequerido('domicilios','required')">{{
                                         mensajeErrorCampoRequerido('domicilios','required') }}</mat-error>
@@ -79,7 +79,8 @@
                             </div>
                         </div>
                         <div class="botones">
-                            <button mat-raised-button type="button" color="primary" (click)="agregarDomicilio()">Añadir Domicilio Nuevo</button>
+                            <button mat-raised-button type="button" color="primary" (click)="agregarDomicilio()">Añadir
+                                Domicilio Nuevo</button>
                             <button mat-raised-button matStepperPrevious>Regresar</button>
                             <button mat-raised-button matStepperNext type="button">Siguiente</button>
                         </div>

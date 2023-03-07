@@ -93,7 +93,7 @@ export class FormularioRegistroUsuarioComponent {
 
   nuevoDomicilio(): FormGroup {    
     return this.formBuilder.group({
-      domicilio: new FormControl('', [Validators.required]),
+      domicilio: new FormControl('', [Validators.required]),      
     });
   }
 
