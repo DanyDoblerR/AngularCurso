@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>Actualizar datos</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="datosUsuario" (ngSubmit)="actualizarUSuario(datosUsuario.value)" novalidate>
+  <mat-vertical-stepper [linear]="false" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Ingresa datos personales</ng-template>
+        <mat-form-field>
+          <input matInput value="{{perfil.nombres}}" placeholder="Nombres" formControlName="nombres" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.apellidoPaterno}}"  placeholder="Apellido paterno" formControlName="apellidoPaterno" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.apellidoMaterno}}" placeholder="Apellido materno" formControlName="apellidoMaterno" required>
+        </mat-form-field>
+      </mat-step>
+
+      <mat-step [stepControl]="firstFormGroup">
+        <ng-template matStepLabel>Ingresa datos de domicilio</ng-template>
+        <mat-form-field>
+          <input matInput value="{{perfil.calle}}" placeholder="Calle" formControlName="calle" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.numero}}"  placeholder="Numero" formControlName="numero" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.colonia}}" placeholder="Colonia" formControlName="colonia" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.estado}}" placeholder="Estado" formControlName="estado" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput  value="{{perfil.cp}}" placeholder="CP" formControlName="cp" required>
+        </mat-form-field>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <ng-template matStepLabel>Ingresa los datos restantes</ng-template>
+        <mat-form-field>
+          <input type="email"  matInput  value="{{perfil.email}}" placeholder="Correo" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  matInput value="{{perfil.telefono}}"placeholder="telefono" formControlName="telefono" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput value="{{perfil.gender}}" placeholder="Genero" formControlName="gender" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input  value="{{perfil.contrasena}}" matInput placeholder="Contraseña" formControlName="contrasena"  matInput [type]="this.camposEditar ? 'password':'text'">
+        </mat-form-field>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Realizado</ng-template>
+        Has Terminado?
+        <div>
+        <a mat-button matStepperPrevious>Atras</a>
+        <a mat-button (click)="stepper.reset()">Borrar todo</a>
+        <button mat-raised-button  [mat-dialog-close]="true" cdkFocusInitial [disabled]="this.camposEditar" class="m-2 w-3" color="primary" type="submit">Actualizar Datos</button>
+        <a mat-raised-button (click)="activarFormEditar()" class="w-3" color="info">Editar Usuario</a>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <a mat-button mat-dialog-close>Cancelar</a>
+
+</mat-dialog-actions>
