@@ -7,6 +7,11 @@ export class Usuario {
     apellidoMaterno: string;
     email: string;
     telefono: number;
+    calle: string;
+    numero: number;
+    colonia: string;
+    estado: string;
+    cp: number;
     gender: string;
     contrasena: string;
     imagenPerfil: any;
@@ -20,6 +25,11 @@ export class Usuario {
         this.contrasena = '';
         this.gender = '';
         this.telefono = 0;
+        this.calle = '';
+        this.numero = 0;
+        this.colonia = '';
+        this.estado = '';
+        this.cp = 0;
         this.imagenPerfil = null;
     }
 }

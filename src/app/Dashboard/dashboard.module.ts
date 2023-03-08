@@ -6,9 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-
-
+import { UsuariosComponent, DialogoModificar } from './usuarios/usuarios.component';
 
 
 @NgModule({
@@ -16,14 +14,15 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     DashboardComponent,
     PerfilComponent,
     UsuariosComponent,
-    DialogContentExampleDialog
+    DialogContentExampleDialog,
+    DialogoModificar
   ],
   imports: [
     CommonModule,
     RouterModule,
     ComponentsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 
 })

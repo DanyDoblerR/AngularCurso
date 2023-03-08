@@ -11,9 +11,10 @@ import { InicioSesionModule } from './InicioSesion/inicio-sesion.module';
 import { DashboardModule } from './Dashboard/dashboard.module';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,     
+    AppComponent,   
   ],
   imports: [
     BrowserModule,
